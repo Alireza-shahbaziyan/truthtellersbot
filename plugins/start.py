@@ -1,5 +1,7 @@
 from pyrogram import Client, filters
+from plugins.var import pv_start_result
 
 @Client.on_message(filters.command('start'))
 def start_command(c,m):
-    m.reply_text("برو بچه. \nپی وی مساوی بلاک\nبدو مزاحم نشو من قصد ادامه تحصیل دارم\n امدی پی وی واسه چی")
+    m.reply_text(pv_start_result)
+    
