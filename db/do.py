@@ -10,7 +10,7 @@ def get_user(user_id):
 
 @db_session
 def add_user(user_id):
-    return User(id=str(user_id), haghs=0, timestamp=datetime.now())
+    return User(id=str(user_id), haghs=0, joined_at=datetime.now())
 
 @db_session
 def add_hagh(user_id):
