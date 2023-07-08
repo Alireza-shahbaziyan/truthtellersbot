@@ -11,13 +11,14 @@ def get_user(user_id):
 
 @db_session
 def add_user(user_id):
-    return User(id=str(user_id), score=0, supporters=[], joined_at=datetime.now())
-
+    try:
+        return User(id=str(user_id), score=0, supporters=[], joined_at=datetime.now())
+    except:
+        print("error / do.py 17")
 
 @db_session
 def add_hagh(receiver, giver):
     user = get_user(receiver)
-    
     # if user befor give a gagh :/
     if str(giver) in user.supporters: return False
 
