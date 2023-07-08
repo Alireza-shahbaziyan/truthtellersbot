@@ -20,6 +20,6 @@ def truth(_,message):
     do.add_hagh(target_id)
     target = do.get_user(target_id)
     # message.reply_text( f"یک حق به حقهای کاربر اضاف شد \n تعداد حق های کاربر:{target.haghs}")
-    with open("/Users/alireza/Desktop/truthtellersbot/video/hagh.mp4", "rb") as f:
+    with open("video/hagh.mp4", "rb") as f:
         message.reply_video(video=f,caption=f"یک حق به حقهای کاربر اضاف شد \n تعداد حق های کاربر:{target.haghs}")
     

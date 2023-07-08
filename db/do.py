@@ -8,13 +8,20 @@ from datetime import datetime
 def get_user(user_id):
     return User.get(id=str(user_id))
 
-@db_session
-def add_user(user_id):
-    return User(id=str(user_id), haghs=0, joined_at=datetime.now())
 
 @db_session
-def add_hagh(user_id):
-    user = get_user(user_id)
-    if user is None: return False
-    user.haghs += 1
+def add_user(user_id):
+    return User(id=str(user_id), score=0, supporters=[], joined_at=datetime.now())
+
+
+@db_session
+def add_hagh(receiver, giver):
+    user = get_user(receiver)
+    
+    # if user befor give a gagh :/
+    if str(giver) in user.supporters: return False
+
+    user.score += 1
+    user.supporters += [str(giver)]
     return True
+

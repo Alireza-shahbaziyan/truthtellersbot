@@ -8,7 +8,8 @@ db.bind(provider='sqlite', filename='../db.sqlite3', create_db=True)
 
 class User(db.Entity):
     id        = orm.PrimaryKey(str) # user_id, ex: 956473054
-    haghs     = orm.Required(int)
+    score     = orm.Required(int)
+    suppoters = orm.Required(orm.StrArray)
     joined_at = orm.Required(datetime)
 
 
